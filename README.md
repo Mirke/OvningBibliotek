@@ -1,6 +1,6 @@
 # Laboration 6
 
-Bibliotek 1, libresistance.so
+**Bibliotek 1** , libresistance.so
 Skriv ett bibliotek, libresistance.so, med funktioner för att beräkna den totala resistansen för olika kopplade  resistanser. Resistanserna ska kunna kopplas parallellt eller i serie. Man behöver inte räkna på blandade kopplingar.
 
 float calc_resistance(int count, char conn, float *array);
@@ -15,7 +15,7 @@ Biblioteket får inte krascha om en "nollpekare" skickas till funktioen, dvs om 
 Om argumenten är felaktiga skall funktionen returnera -1.
 Returvärdet är den resulterande resistansen.
 
-Biliotek 2, libpower.so
+**Biliotek 2**, libpower.so
 Ström som passerar ett motstånd värmer upp motståndet med en viss effekt (P). Effekten kan beräknas med hjälp av spänningen och ström eller spänning och motståndsvärdet enligt dessa formler:
 
 P = U * I  (Spänning gånger strömmen)
@@ -28,7 +28,7 @@ float calc_power_r(float volt, float resistance);
 
 float calc_power_i(float volt, float current);
 
-Bibliotek 3, libcomponent.so
+**Bibliotek 3**, libcomponent.so
 Skriv ett bibliotek, libcomponent.so, med funktionen:
 
 int count = e_resistance(float orig_resistance, float *res_array );
