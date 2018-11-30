@@ -15,49 +15,32 @@
  *    0: då conn = 'P' och någon av resistanserna är 0
  *    Ersättningsresistans: annars 
  */
-float calc_resistance(int count, char conn, float *array)
-{
-  if (count < 1)
+float calc_resistance(int count, char conn, float *array){
+  if (count < 1 || array == NULL)
     return -1;
   
-  if (conn == 'S')
-  {
+  if (conn == 'S'){
     float sersum = 0;
-    for(int i = 0;i < count;i++)
-    {
-      if (array == NULL || *array < 0)
-      {
+    for(int i = 0;i < count;i++){
+      if (*array < 0)
 	return -1;
-      }
       else
-      {
 	sersum += *(array++);
-      }
     }
     return sersum;
   }
-  else if (conn == 'P')
-  {
+  else if (conn == 'P'){
     float parsum = 0;
-    for(int i = 0;i < count;i++)
-    {
-      if (array == NULL || *array < 0)
-      {
+    for(int i = 0;i < count;i++){
+      if (*array < 0)
 	return -1;
-      }
       else if (*array == 0)
-      {
 	return 0;
-      }
       else
-      {
 	parsum += 1/(*(array++));
-      }
     }
     return 1/parsum;
   }
   else
-  {
     return -1;
-  }
 }
