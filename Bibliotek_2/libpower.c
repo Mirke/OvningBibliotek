@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "calc_power_r.h"
+#include "calc_power_i.h"
+
 
 // Bib 2
-float calc_power_r(float volt, float resistance);
-float calc_power_i(float volt, float current);
 int main(void) {
 
   // Functions
