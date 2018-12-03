@@ -10,13 +10,12 @@ int e_resistance(float orig_resistance, float *res_array)
   float resistance = orig_resistance;
   pwr = (int)log10(resistance);  // used to convert e12 table to appropriate size
 
-  while(count<3 && i<E12SIZE && resistance>=1){
+  while(count<3 && resistance>=1){
     e12value=e12[i];
     for(int j=0;j<pwr;j++){
       e12value = e12value*10;
 
     }
-
 
     if(e12value>resistance || i==(E12SIZE-1)){    // used to catch the largest possible value that's <= resistance
       if(e12value>resistance) e12value = previous;
