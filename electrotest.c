@@ -5,7 +5,6 @@
 
 int main(void){
   char input[MAXINPUT]; // Används för att läsa input med fgets
-
   char conn;
   do{
     printf("Ange koppling[S,P]: ");
@@ -26,7 +25,7 @@ int main(void){
       printf("Antal komponenter får inte vara mindre än 1, försök igen!\n");
     }
   } while(count < 1);
-  
+
   float* array = calloc(count,sizeof(float));
   for(int i = 0;i < count;i++){
     do{
@@ -35,7 +34,7 @@ int main(void){
       *(array+i) = atof(input);
       if(*(array+i) < 0){
 	printf("Resistanser får inte vara negativa, försök igen!\n");
-      }      
+      }
     } while(*(array+i) < 0);
   }
 
@@ -51,8 +50,18 @@ int main(void){
   float res2 = calc_power_r(voltage, res);
 
   printf("Effekt: \n %.2f W\n",res2);
-
   free(array);
+
+  printf("Ersättningsresistanser i E12-serien kopplade i serie:\n");
+  float *pE12Res;
+  pE12Res = malloc(3*sizeof(float));
+  count = e_resistance(res,pE12Res);
+
+  for(int i=0;i<count;i++){
+    printf("%.2f\n", pE12Res[i]);
+    }
+  printf("\n");
+  free(pE12Res);
 
 return 0;
 }
