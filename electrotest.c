@@ -1,6 +1,8 @@
 // Electrotest c fil
 #include "electrotest.h"
 
+#define MAXINPUT 30
+
 int main(void){
   char input[MAXINPUT]; // Används för att läsa input med fgets
 
