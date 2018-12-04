@@ -49,7 +49,7 @@ int main(void){
   scanf("%f",&voltage);
   float res2 = calc_power_r(voltage, res);
 
-  printf("Effekt: \n %.2f W\n",res2);
+  printf("Effekt: %.2f W\n",res2);
   free(array);
 
   printf("Ersättningsresistanser i E12-serien kopplade i serie:\n");
