@@ -35,3 +35,4 @@ install:
 	sudo mv ./lib/libpower.so /usr/lib/
 	sudo mv ./lib/libcomponent.so /usr/lib/
 	gcc -o electrotest electrotest.o /usr/lib/libresistance.so /usr/lib/libpower.so /usr/lib/libcomponent.so -lm
+	sudo mv electrotest /usr/local/bin/
